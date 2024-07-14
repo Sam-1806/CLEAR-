@@ -16,32 +16,26 @@ Follow these steps to set up the project on your local machine:
 
 Clone the Repository
 
-sh
-Copy code
+  
+   
 git clone https://github.com/your-username/chat-with-pdf-gemini.git
 cd chat-with-pdf-gemini
 Create a Virtual Environment
 
-sh
-Copy code
+  
+   
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 Install Dependencies
 
-sh
-Copy code
+  
+   
 pip install -r requirements.txt
 Set Up Environment Variables
-Create a .env file in the root directory and add your Google API key:
+Create a .env file in the root directory and add API keys:
 
-env
-Copy code
-GOOGLE_API_KEY=your_google_api_key
-Run the Application
+streamlit run main.py
 
-sh
-Copy code
-streamlit run app.py
 Usage
 Upload PDF Files: Use the sidebar to upload one or more PDF files containing business contracts.
 Ask Questions: Enter questions about the uploaded contracts in the main input field.
@@ -54,7 +48,7 @@ Text Summarization
 The application uses the facebook/bart-large-cnn model from Hugging Face's transformers library to summarize the contract text.
 
 Content Classification
-The typeform/distilbert-base-uncased-mnli model is used for zero-shot classification of contract clauses.
+The typeform/distilbert-base-uncased-mnli model is used for zero-  ot classification of contract clauses.
 
 Deviation Detection
 Semantic similarity is calculated using the sentence-transformers library with the paraphrase-MiniLM-L6-v2 model.
