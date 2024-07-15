@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my-portfolio</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,100;1,700&display=swap" rel="stylesheet"/>
+    <style>
+      * { margin: 0px; padding: 0px; }
+      .style { padding: 11px; border-radius: 10px; border: 2px; background-color: #9f20ec; color: white; font-weight: 900; font-size: 16px; width: 134px; height: 58px; filter: drop-shadow(9px 5px 30px black); }
+      body { height: 800px; background-color: #030a1e; color: white; font-family: "Poppins", sans-serif; }
+      navbar { width: 100%; display: flex; justify-content: space-around; align-items: center; background-color: #37517e; height: 80px; z-index: 1000; margin-left: 0px; }
+      .left { display: flex; font-size: 20px; padding: 10px; }
+      .left img { height: 75px; width: 100px; filter: invert(1); }
+      .txt { margin-top: 0.8rem; margin-left: 0.7rem; }
+      navbar ul { list-style: none; color: white; display: flex; justify-content: center; }
+      section { display: flex; justify-content: space-around; }
+      .right ul li a { text-decoration: none; color: white; margin: 0 23px; transition: 1s; transition-delay: 100ms; }
+      .right ul li a:hover { font-size: 1.1rem; color: red; }
+      .leftsec { height: 136px; font-size: 2.3rem; margin-top: 7rem; margin-left: 5rem; max-width: 40%; }
+      .leftsec > div { display: block; }
+      .rightsec { max-width: 50%; margin-top: 7rem; margin-left: 20rem; }
+      .name { font-weight: 800; }
+      .one { color: rgb(51, 194, 194); width: 354px; display: inline; }
+      .proff { color: #FF9800; font-weight: 500; }
+      .rightsec img { height: 400px; width: 100%; filter: drop-shadow(20px 20px 40px rgb(0, 1, 3)); }
+      .but { padding: 0.6rem; border-radius: 20px; background-color: #635985; color: white; font-weight: 700; border: none; width: 137px; height: 50px; margin-top: 40px; transition: all 300ms ease-in 100ms; }
+      .butm { padding: 0.5rem; border-radius: 20px; background-color: #635985; color: white; font-weight: 700; border: none; width: 100px; height: 35px; transition: all 300ms ease-in 100ms; }
+      .but:hover { background-color: green; scale: 90%; }
+      section2 { color: #F1FADA; margin: 3rem 5rem; display: flex; }
+      .about { color: #F1FADA; margin: 3rem 5rem; display: flex; font-size: 1.3rem; font-weight: 600; }
+      .fif { color: gray; margin-top: -2.5rem; margin-left: 5rem; }
+      .right-sub { background: #2D9596; color: #F1FADA; height: 300px; display: block; position: absolute; align-items: center; display: none; width: 140px; filter: opacity(80%); list-style: none; margin-top: 25px; border-radius: 10px; z-index: 1; }
+      .right-sub ul { list-style: none; }
+      .right-sub ul li { margin-top: 30px; margin-left: 10px; }
+      .right-sub a { text-decoration: none; color: aliceblue; }
+      .hamb { filter: invert(1); display: none; }
+      footer { background-color: #202a3a; color: #fff; padding: 20px 0; text-align: center; }
+      footer nav ul { display: flex; justify-content: center; padding: 10px 0; }
+      footer nav ul li { margin: 0 10px; }
+      footer nav ul li a { color: #fff; text-decoration: none; }
+      .Abouttit { position: relative; font-size: 22px; font-weight: 700; padding: 20px; text-align: center; filter: hue-rotate(50deg); margin-left: 80px; color: rgb(126, 130, 168); }
+      @media screen and (max-width: 400px) {
+        section { position: relative; margin-top: -20px; }
+        .right { display: none; }
+        .rightsec img { display: block; }
+        .leftsec { font-size: 40px; margin-left: 290px; }
+        section2 { margin: 13rem 1rem; }
+        .fif { position: absolute; margin-top: -177px; margin-left: 15px; }
+        .Abouttit { margin-top: 46px; margin-left: -70px; }
+        .about { position: relative; margin-top: 0px; margin-left: 25px; }
+        .right-sub { position: absolute; margin-top: -151px; margin-left: -500px; display: flex; }
+        .hamb { display: flex; }
+        .cross { filter: invert(1); position: absolute; margin-left: 110px; margin-top: -264px; }
+        .rightsec { display: block; }
+        .leftsec { width: 100%; margin-left: 10px; }
+        .but { height: 43px; width: 115px; font-size: 10px; }
+      }
+      .testimonials {
+        text-align: center;
+        margin: 50px 0;
+        color: #F1FADA;
+      }
+      .testimonial-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        width: 100%;
+      }
+      .testimonial-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .testimonial-button {
+        background-color: #635985;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .testimonial-cards {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+      }
+      .testimonial-card {
+        width: 100%;
+        transition: transform 0.5s ease-in-out;
+        text-align: left;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #2D9596;
+        border-radius: 10px;
+        margin: 106px 10px; 
+      }
+      .client-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .client-name { font-size: 1.2rem; margin: 10px 0; }
+      .client-review { font-size: 1rem; margin: 10px 0; }
+      .client-rating { font-size: 1.5rem; color: gold; }
+    </style>
+  </head>
+  <body>
+    <navbar>
+      <div class="left">
+        <img class="hamb" src="hamburg.svg" alt="">
+        <div class="img"><img src="logo.png" alt="no image"></div>
+        <!-- <div class="txt"><b>Clear</b></div> -->
+      </div>
+      <div class="right">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><button class="butm">Try Now</button></li>
+        </ul>
+      </div>
+    </navbar>
+    <section>
+      <div class="leftsec">
+        Welcome to <!--  <span class="name">to</span> -->
+        <div class="one">Contract Language Evaluation and Risk Analysis</div>
+        <!-- <div class="proff"><span id="element"></span></div> -->
+        <button class="but" onclick="resume()">Try IT Now</button>
+      </div>
+      <div class="rightsec"><img src="designer_1.png" /></div>
+    </section>
+    <div class="right-sub">
+      <img src="cross.svg" class="cross" alt="no icon">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#About.html">About Me</a></li>
+        <li><a href="#ContactMe.html">ContactMe</a></li>
+        <li><a href="#Questions.html">Questions?</a></li>
+      </ul>
+    </div>
+    <div class="Abouttit" style="text-decoration:underline;">About US</div>
+    <div class="about" id="about">
+      Welcome to CLEAR, your go-to platform for Contract Language Evaluation and Risk Analysis. Upload your business contracts and leverage AI to gain crucial insights and identify potential risks. Our advanced technology ensures comprehensive contract reviews, helping you make informed decisions and mitigate risks effectively
+    </div>
+    <section class="testimonials" id="testimonials">
+      <h2 class="about" >What Clients Say About Us</h2>
+      <div class="testimonial-container">
+        <button class="testimonial-button prev">Prev</button>
+        <div class="testimonial-cards">
+          <div class="testimonial-card">
+            <img src="client1.jpg" alt="Client 1" class="client-img">
+            <h3 class="client-name">Client 1</h3>
+            <p class="client-review">This is an amazing service! Highly recommend.</p>
+            <div class="client-rating">⭐⭐⭐⭐⭐</div>
+          </div>
+          <div class="testimonial-card">
+            <img src="client2.jpg" alt="Client 2" class="client-img">
+            <h3 class="client-name">Client 2</h3>
+            <p class="client-review">Great experience, very professional.</p>
+            <div class="client-rating">⭐⭐⭐⭐⭐</div>
+          </div>
+          <div class="testimonial-card">
+            <img src="client2.jpg" alt="Client 2" class="client-img">
+            <h3 class="client-name">Client 2</h3>
+            <p class="client-review">Great experience, very professional.</p>
+            <div class="client-rating">⭐⭐⭐⭐⭐</div>
+          </div>
+          <div class="testimonial-card">
+            <img src="client2.jpg" alt="Client 2" class="client-img">
+            <h3 class="client-name">Client 2</h3>
+            <p class="client-review">Great experience, very professional.</p>
+            <div class="client-rating">⭐⭐⭐⭐⭐</div>
+          </div>
+          <!-- Add more testimonial cards as needed -->
+        </div>
+        <button class="testimonial-button next">Next</button>
+      </div>
+    </section>
+    <footer>
+      <p>&copy;2024 Clear</p>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p>C.L.E.A.R</p>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", { strings: ["Android Developer", "Problem Solver", "Web Developer"], typeSpeed: 100 });
+      const prevButton = document.querySelector('.prev');
+      const nextButton = document.querySelector('.next');
+      const testimonialCards = document.querySelector('.testimonial-cards');
+      let currentIndex = 0;
+      prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCards();
+        }
+      });
+      nextButton.addEventListener('click', () => {
+        if (currentIndex < testimonialCards.children.length - 1) {
+          currentIndex++;
+          updateCards();
+        }
+      });
+      function updateCards() {
+        const offset = -currentIndex * 100;
+        testimonialCards.style.transform = `translateX(${offset}%)`;
+      }
+    </script>
+  </body>
+</html>
